@@ -3,13 +3,19 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductoListadoComponent } from './producto-listado/producto-listado.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductoListadoComponent,
+    AgregarProductoComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
