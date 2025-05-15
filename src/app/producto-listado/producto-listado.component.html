@@ -1,10 +1,10 @@
 <div class="container py-5">
   <div class="text-center mb-4">
-    <h2 class="fw-bold text-dark">📦 Sistema de Inventario</h2>
+    <h2 class="fw-bold text-primary">📦 Sistema de Inventario</h2>
   </div>
-  <div class="table-responsive shadow-sm rounded">
-    <table class="table table-bordered table-hover table-striped align-middle">
-      <thead class="table-info text-center">
+  <div class="table-responsive shadow rounded-4 border border-light-subtle">
+    <table class="table table-hover align-middle text-center">
+      <thead class="table-primary text-white">
         <tr>
           <th>ID</th>
           <th>Nombre Producto</th>
@@ -16,16 +16,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let producto of producto">
-          <th scope="row">{{ producto.idProducto }}</th>
-          <td>{{ producto.nombreProducto }}</td>
+        <tr *ngFor="let producto of producto" class="bg-white">
+          <th scope="row" class="text-secondary">{{ producto.idProducto }}</th>
+          <td class="fw-semibold">{{ producto.nombreProducto }}</td>
           <td>{{ producto.proveedor }}</td>
-          <td>{{ producto.categoria }}</td>
-          <td>${{ producto.precio }}</td>
-          <td>{{ producto.stock }}</td>
-          <td class="text-center">
-            <button class="btn btn-sm btn-outline-primary me-1">Editar</button>
-            <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+          <td><span class="badge bg-info-subtle text-info">{{ producto.categoria }}</span></td>
+          <td><strong class="text-success">${{ producto.precio }}</strong></td>
+          <td>
+            <span class="badge bg-light text-dark">{{ producto.stock }}</span>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary me-1">
+              ✏️ Editar
+            </button>
+            <button class="btn btn-sm btn-outline-danger">
+              🗑️ Eliminar
+            </button>
           </td>
         </tr>
       </tbody>
