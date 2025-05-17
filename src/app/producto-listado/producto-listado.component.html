@@ -25,13 +25,9 @@
           <td>
             <span class="badge bg-light text-dark">{{ producto.stock }}</span>
           </td>
-          <td>
-            <button class="btn btn-sm btn-outline-primary me-1">
-              ✏️ Editar
-            </button>
-            <button class="btn btn-sm btn-outline-danger">
-              🗑️ Eliminar
-            </button>
+          <td class="text-center">
+            <button (click)="editarProducto(producto.idProducto)" class="btn btn-warning btn-sm me-3">Editar</button>
+
           </td>
         </tr>
       </tbody>
