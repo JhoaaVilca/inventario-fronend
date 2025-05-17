@@ -35,4 +35,13 @@ export class ProductoListadoComponent {
 
   }
 
+  eliminarProducto(id: number){
+    if(confirm('¿Estás seguro de eliminar este producto?')) {
+      this.productoServicio.eliminarProducto(id).subscribe({
+        next: () => this.ObtenerProductos(),
+        error: (error) => console.log(error)
+      });
+    }
+  }
+
 }
